@@ -36,6 +36,30 @@ def add_hms(hr1,min1,sec1,hr2,min2,sec2):
 
 #assert add_hms(0,0,3600,0,0,61) == (1,1,1)
 
+def old_uk_psp_to_p(pounds,shillings,pennies):
+    return pounds*240 +  shillings*12 + pennies
 
+#assert old_uk_psp_to_p(1,0,1)== 241
 
+def old_uk_p_to_psp(pennies):
+    pounds=pennies//240
+    shillings=(pennies%240)//12
+    last_pennies=(pennies%240)%12
+    return(pounds,shillings,last_pennies)
 
+#assert old_uk_p_to_psp(0) == (0,0,0)
+    
+def add_old_uk(pounds1,shillings1,pennies1,pounds2,shillings2,pennies2):
+    total_pennies= old_uk_psp_to_p(pounds1,shillings1,pennies1)+ old_uk_psp_to_p(pounds2,shillings2,pennies2)
+    return old_uk_p_to_psp(total_pennies)
+
+#assert add_old_uk(0,19,11,19,0,1)== (20,0,0)
+
+def is_palindrome(phrase):
+    phrase = phrase.lower()
+    phrase = phrase.replace(" ", "")
+    return phrase == phrase[::-1]
+
+#assert is_palindrome("Abba")
+
+def 
