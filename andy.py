@@ -62,4 +62,26 @@ def is_palindrome(phrase):
 
 #assert is_palindrome("Abba")
 
-def 
+def is_anagram(phrase1,phrase2):
+    phrase1 = phrase1.lower()
+    phrase2 = phrase2.lower()
+    phrase1 = phrase1.replace(" ", "")
+    phrase2 = phrase2.replace(" ", "")
+    sorted_phrase1 = sorted(phrase1)
+    sorted_phrase2 = sorted(phrase2)
+    return sorted_phrase1 == sorted_phrase2
+
+#assert is_anagram('Study', 'Dusty') == True
+
+
+def lucky_fun(lucky_object):
+    def checker(obj):
+        return str(lucky_object) in str(obj)
+    return checker
+
+assert lucky_fun(7)(7), "Test case 1 failed"
+
+
+
+
+
